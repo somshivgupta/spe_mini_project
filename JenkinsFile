@@ -40,18 +40,18 @@ pipeline {
                   }
              }
          }
-//
-//         stage('Push Docker Images') {
-//             steps {
-//                 script {
-//                     docker.withRegistry('', 'DockerHub') {
-//                         sh "docker tag ${DOCKER_IMAGE_NAME}:latest ${DOCKER_IMAGE_NAME}:latest"
-//                         sh "docker push ${DOCKER_IMAGE_NAME}:latest"
-//                     }
-//                 }
-//             }
-//         }
-//
+
+         stage('Push Docker Images') {
+             steps {
+                 script {
+                     docker.withRegistry('', 'DockerHub') {
+                         sh "docker tag ${DOCKER_IMAGE_NAME}:latest ${DOCKER_IMAGE_NAME}:latest"
+                         sh "docker push ${DOCKER_IMAGE_NAME}:latest"
+                     }
+                 }
+             }
+         }
+
 //         stage('Run Ansible Playbook') {
 //             steps {
 //                 script {
